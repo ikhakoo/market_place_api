@@ -33,4 +33,4 @@ gem "email_spec"
 end
 
 gem 'devise'
-
+gem 'kaminari'
