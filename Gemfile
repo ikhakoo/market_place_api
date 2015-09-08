@@ -29,6 +29,7 @@ gem "factory_girl_rails"
 gem "ffaker"
 gem 'shoulda-matchers'
 gem 'spring'
+gem "email_spec"
 end
 
 gem 'devise'
