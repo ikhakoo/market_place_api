@@ -33,4 +33,5 @@ gem "email_spec"
 end
 
 gem 'devise'
-
+gem 'kaminari'
+gem 'delayed_job_active_record'
