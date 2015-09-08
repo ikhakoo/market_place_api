@@ -5,9 +5,15 @@ class Order < ActiveRecord::Base
 
   before_validation :set_total!
 
+  validates :user_id, presence: true
+  validates_with EnoughProductsValidator #this is the line we added for the custom validator
+
   def set_total!
-  	self.total = products.map(&:price).sum
-	end
+    self.total = 0
+    placements.each do |placement|
+      self.total += placement.product.price * placement.quantity
+    end
+  end
 
 	def build_placements_with_product_ids_and_quantities(product_ids_and_quantities)
     product_ids_and_quantities.each do |product_id_and_quantity|
